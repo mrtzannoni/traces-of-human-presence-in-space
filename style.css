@@ -176,28 +176,24 @@ canvas {
 
 .main-title {
   font-family: var(--font-title);
-  font-size: min(55px, 6vh);
+  font-size: clamp(40px, 4vw, 80px);
   line-height: 1.2;
   margin-top: 0;
   margin-left: 25px;
-  margin-bottom: min(10vh, 60px);
+  margin-bottom: clamp(40px, 8vh, 100px);
   text-transform: uppercase;
 }
 
 .intro-text {
-  font-size: min(16px, 1.8vh);
-  margin-bottom: min(50px, 4vh);
+  font-size: clamp(14px, 1.2vw, 24px);
+  margin-bottom: clamp(30px, 4vh, 70px);
 }
 
 .filter-sentence {
-  font-size: min(22px, 2.4vh);
+  font-size: clamp(18px, 1.6vw, 32px);
   line-height: 1.5;
-  margin-bottom: min(50px, 4vh);
+  margin-bottom: clamp(30px, 4vh, 70px);
 }
-.highlight-count {
-  color: var(--accent-color);
-}
-
 
 select {
   background-color: transparent;
@@ -209,25 +205,30 @@ select {
   border-radius: 10px;
   color: var(--accent-color);
   font-family: inherit;
-  font-size: min(22px, 2.4vh);
+  font-size: clamp(18px, 1.6vw, 32px);
   cursor: pointer;
+}
+
+select:hover {
+  background-color: var(--accent-color);
+  color: white;
 }
 
 #orbits-container {
   width: 100%;
-  height: min(280px, 28vh);
+  height: clamp(200px, 28vh, 450px);
   margin-bottom: 5px;
 }
 
 .stats-panel {
   margin-top: auto;
-  font-size: min(16px, 1.8vh);
-  padding-bottom: min(20px, 2vh);
-  padding-top: min(20px, 2vh);
+  font-size: clamp(14px, 1.2vw, 24px);
+  padding-bottom: clamp(15px, 2vh, 35px);
+  padding-top: clamp(15px, 2vh, 35px);
 }
-select:hover {
-  background-color: var(--accent-color);
-  color: white;
+
+.highlight-count {
+  color: var(--accent-color);
 }
 
 /* LABELS OBJECTS */
