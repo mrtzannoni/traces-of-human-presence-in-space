@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <div id="mobile-blocker">
+      <div class="blocker-content">
+        <h2>Please use a larger screen</h2>
+        <p>This data visualization is optimized for desktop computers only.</p>
+        <p>Please open this link on a laptop or desktop to explore the work.</p>
+      </div>
+    </div>
+
+    <main class="main-layout">
+      <section class="left-column">
+        <h1 class="main-title">
+          TRACES OF HUMAN <br />
+          PRESENCE IN SPACE
+        </h1>
+
+        <div class="map-controls">
+          <div class="tri-state-toggle">
+            <input
+              type="radio"
+              name="map-mode"
+              id="heatmap-only"
+              value="heatmap"
+            />
+            <label for="heatmap-only">Heatmap</label>
+
+            <input
+              type="radio"
+              name="map-mode"
+              id="both"
+              value="both"
+              checked
+            />
+            <label for="both">Both</label>
+
+            <input
+              type="radio"
+              name="map-mode"
+              id="points-only"
+              value="points"
+            />
+            <label for="points-only">Pointmap</label>
+
+            <div class="slider"></div>
+          </div>
+
+          <div class="legend">
+            <div class="legend-item oactive">
+              <span class="dot active"></span> Active objects
+            </div>
+            <div class="legend-item oinactive">
+              <span class="dot inactive"></span> Inactive objects
+            </div>
+            <div class="legend-item ofamous">
+              <span class="dot famous"></span> Famous objects
+            </div>
+          </div>
+        </div>
+
+        <div id="scatterplot-container">
+          <div class="zoom-hint">SCROLL TO ZOOM • DRAG TO PAN </div>
+        </div>
+      </section>
+
+      <section class="right-column">
+        <div class="narration-panel">
+          <p class="intro-text">
+            We often imagine the void between planets as empty. In reality, the
+            region surrounding the Earth has become layered and congested, built
+            up over decades of launches, missions, and technological remains.
+          </p>
+
+          <form class="filter-sentence">
+            Around Earth,
+            <span id="object-count" class="highlight-count">33.852</span>
+            <select id="type-select" data-cat="type">
+              <option value="all">objects</option>
+              <option value="P">payloads</option>
+              <option value="D">debris</option>
+              <option value="R">rockets</option>
+            </select>
+            launched by
+            <select id="state-select" data-cat="state">
+              <option value="all">all countries</option>
+              <option value="US">USA</option>
+              <option value="RU-SU">Russia/USSR</option>
+              <option value="CN">China</option>
+              <option
+                value="AT-B-CH-CZ-D-DK-EE-E-FI-FR-UK-GR-HU-IE-I-L-NO-PL-PT-RO-S-SI">
+                ESA (Europe)
+              </option>
+            </select>
+            keep circulating in
+            <select id="orbit-select" data-cat="orbit">
+              <option value="all">space</option>
+              <option value="In Earth orbit">Earth orbit</option>
+              <option value="In solar orbit">Solar orbit</option>
+              <option value="Lost">lost position</option></select
+            >, persisting even after their original purpose has ended.
+          </form>
+        </div>
+
+        <div id="orbits-container"></div>
+
+        <div class="stats-panel">
+          <p>
+            This population is largely shaped by a small number of space powers:
+            the United States account for [51.2%], followed by Russia/USSR
+            [21.0%], China [17.6%], and Europe through ESA [4.0%].
+          </p>
+          <button id="btn-footer-toggle">Project Info ↓</button>
+        </div>
+        
+      </section>
+    </main>
+    <footer id="main-footer">
+      <button id="btn-close-footer">Close Info ↑</button>
+       <div class="footer">
+        <div class="footer-section-a">
+
+            <h5>Design, Text & Code</h5>
+            <p>Marta Zannoni</p>
+            <h5><br></h5>
+
+            <h5>Context</h5>
+            <p>Aalto University,<br>
+            MA Studies,<br>
+            Information Design</p>
+      
+        </div>
+        <div class="footer-section">
+            <h5>Data Sources</h5>
+            <p></p>
+            <div style="margin-left: 2em; text-indent: -2em; line-height: 1.5;">
+            McDowell, J. C. (2026). General Catalog of Artificial Space Objects: Current Catalog [Dataset]. Jonathan's Space Report.</i>
+            <a href="https://planet4589.org/space/gcat/web/cat/curcols.html" target="_blank">https://planet4589.org/space/gcat/web/cat/curcols.html</a>
+            </div>
+        </div>
+    </div>
+    </footer>
+    
+    <div class="label"></div>
+  </body>
+</html>
